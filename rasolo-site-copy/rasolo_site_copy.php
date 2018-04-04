@@ -3,7 +3,7 @@
 Plugin Name: RaSolo site copy
 Plugin URI: http://ra-solo.ru
 Description: Плагин копирует данные сайта и выкладывает ссылки пользователю для бекапирования
-Version: 1.0
+Version: 1.1
 Author: Andrew Galagan
 Author URI: http://galagan.ra-solo.ru
 License: GPL2
