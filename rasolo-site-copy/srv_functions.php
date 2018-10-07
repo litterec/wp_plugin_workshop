@@ -484,30 +484,31 @@ return $str;
        };   // The end of clear_input_str
 }
 
-if(!function_exists('rasolo_set_admin_message')){
-function rasolo_set_admin_message($rasolo_msg_content,
+if(!function_exists('rasolo_set_admin_message_01')){
+function rasolo_set_admin_message_01($rasolo_msg_content,
                                     $rasolo_msg_mode='info',
                                     $dismiss=false)
        {
-global $rasolo_messages;
-//           die('rasolo_set_admin_message');
+global $rasolo_messages_01;
+//           die('rasolo_set_admin_message_01');
 if(empty($rasolo_msg_content))return;
-if(!isset($rasolo_messages))$rasolo_messages=array();
+if(!isset($rasolo_messages_01))$rasolo_messages_01=array();
 if(empty($rasolo_msg_mode))return;
-$rasolo_messages[]=array(
+$rasolo_messages_01[]=array(
     'msg_txt'=>$rasolo_msg_content,
     'is_dismiss'=>$dismiss,
     'msg_mode'=>$rasolo_msg_mode
 );
-       } // The end of rasolo_set_admin_message
+       } // The end of rasolo_set_admin_message_01
 };
 
-if(!function_exists('rasolo_display_admin_messages')){
-function rasolo_display_admin_messages()
+if(!function_exists('rasolo_display_admin_messages_01')){
+function rasolo_display_admin_messages_01()
        {
-global $rasolo_messages;
+global $rasolo_messages_01;
 
-if(!current_user_can('manage_options'))return;
+if(!current_user_can('edit_others_posts') && 
+	!current_user_can('view_woocommerce_reports') )return;
 $msg_types=array(
     'error'=>'error',
     'warning'=>'warning',
@@ -515,8 +516,8 @@ $msg_types=array(
     'info'=>'info',
 );
 
-if(!isset($rasolo_messages))$rasolo_messages=array();
-foreach ($rasolo_messages as $nth_msg) {
+if(!isset($rasolo_messages_01))$rasolo_messages_01=array();
+foreach ($rasolo_messages_01 as $msg_key=>$nth_msg) {
 
 //    myvar_dump($nth_msg,'$nth_msg');
 //    die('$nth_msg');
@@ -540,6 +541,7 @@ foreach ($rasolo_messages as $nth_msg) {
         ?>
     </div>
 <?php
+	unset($rasolo_messages_01[$msg_key]);
 };
        }; // The end of rasolo_display_admin_messages
 };

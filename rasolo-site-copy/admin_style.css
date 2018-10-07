@@ -1,3 +1,4 @@
+#allow_simple_users_input,
 #rasolo_make_copy input.button {
     margin-left: 120px;
 }
@@ -39,6 +40,11 @@
 
 .rasolo_sitecopy_space {
     margin-top: 25px;
+    width: 100%;
+}
+
+.rasolo_sitecopy_double_space {
+    margin-top: 70px;
     width: 100%;
 }
 
