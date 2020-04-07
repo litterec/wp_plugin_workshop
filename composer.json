@@ -2,7 +2,7 @@
     "name":"rasolo/plugin_workshop",
     "description":"This is the convenient environment for the plugins design",
     "license":"MIT",
-    "version": "1.0.0",
+    "version": "@dev",
     "authors":{
         "name":["Andrew V. Galagan"],
         "email":["andrew.galagan@gmail.com"]
