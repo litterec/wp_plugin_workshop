@@ -1,0 +1,17 @@
+{
+    "name":"RaSolo Plugin workshop",
+    "description":"This is the convenient environment for the plugins design",
+    "license":"MIT",
+    "authors":{
+        "name":"Andrew V.Galagan",
+        "email":"andrew.galagan@gmail.com"
+    },
+
+    "require":{
+        "php":">=5.5.0"
+    },
+    "config":{
+        "vendor-dir":"vendor"
+    }
+
+}

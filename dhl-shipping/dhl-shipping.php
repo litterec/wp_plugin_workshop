@@ -1,12 +1,14 @@
 <?php
 
+
 /**
  * Plugin Name: DHL Shipping
- * Plugin URI: http://code.tutsplus.com/tutorials/create-a-custom-shipping-method-for-woocommerce--cms-26098
+ * Plugin URI: https://github.com/litterec/wp_plugin_workshop/blob/master/dhl-shipping
  * Description: Custom Shipping Method for WooCommerce
  * Version: 1.0.0
- * Author: Igor Benić
- * Author URI: http://www.ibenic.com
+ * Author: Andrew Galagan
+ * Author URI: https://galagan.ra-solo.ru/?lang=eng&showitem=1
+ * Idea: I gor Benić http://www.ibenic.com
  * License: GPL-3.0+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Domain Path: /lang
@@ -24,9 +26,9 @@ if ( ! defined( 'WPINC' ) ) {
  */
 if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
-    function tutsplus_shipping_method() {
-        if ( ! class_exists( 'TutsPlus_Shipping_Method' ) ) {
-            class TutsPlus_Shipping_Method extends WC_Shipping_Method {
+    function dhl_shipping_method() {
+        if ( ! class_exists( 'dhl_Shipping_Method' ) ) {
+            class dhl_Shipping_Method extends WC_Shipping_Method {
                 /**
                  * Constructor for your shipping class
                  *
@@ -34,14 +36,14 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
                  * @return void
                  */
                 public function __construct() {
-                    $this->id                 = 'tutsplus';
-                    $this->method_title       = __( 'TutsPlus Shipping', 'tutsplus' );
-                    $this->method_description = __( 'Custom Shipping Method for TutsPlus', 'tutsplus' );
+                    $this->id                 = 'rasolo-dhl';
+                    $this->method_title       = __( 'DHL Shipping', 'rasolo-dhl' );
+                    $this->method_description = __( 'Custom Shipping Method for DHL', 'rasolo-dhl' );
 
                     $this->init();
 
                     $this->enabled = isset( $this->settings['enabled'] ) ? $this->settings['enabled'] : 'yes';
-                    $this->title = isset( $this->settings['title'] ) ? $this->settings['title'] : __( 'TutsPlus Shipping', 'tutsplus' );
+                    $this->title = isset( $this->settings['title'] ) ? $this->settings['title'] : __( 'dhl Shipping', 'rasolo-dhl' );
                 }
 
                 /**
@@ -85,12 +87,12 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
         }
     }
 
-    add_action( 'woocommerce_shipping_init', 'tutsplus_shipping_method' );
+    add_action( 'woocommerce_shipping_init', 'dhl_shipping_method' );
 
-    function add_tutsplus_shipping_method( $methods ) {
-        $methods[] = 'TutsPlus_Shipping_Method';
+    function add_dhl_shipping_method( $methods ) {
+        $methods[] = 'dhl_Shipping_Method';
         return $methods;
     }
 
-    add_filter( 'woocommerce_shipping_methods', 'add_tutsplus_shipping_method' );
+    add_filter( 'woocommerce_shipping_methods', 'add_dhl_shipping_method' );
 }
