@@ -10,14 +10,19 @@
     "repositories": [
         {
             "type": "composer",
-            "url": "https://github.com/litterec/wp_plugin_workshop"
+            "url": "https://wpackagist.org"
         }
     ],
-    "require":{
-        "php":">=5.5.0"
+    "type": "wordpress-plugin",
+    "config": {
+        "vendor-dir": "wp-content/vendor"
     },
-    "config":{
-        "vendor-dir":"vendor"
+    "require":{
+        "php":">=5.5.0",
+        "johnpbloch/wordpress" : ">=4.9"
+    },
+    "extra": {
+        "wordpress-install-dir": "wp"
     }
 
 }
