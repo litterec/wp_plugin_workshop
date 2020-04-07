@@ -1,5 +1,5 @@
 {
-    "name":"RaSolo Plugin workshop",
+    "name":"rasolo/plugin_workshop",
     "description":"This is the convenient environment for the plugins design",
     "license":"MIT",
     "authors":{
