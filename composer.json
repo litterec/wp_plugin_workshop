@@ -3,8 +3,8 @@
     "description":"This is the convenient environment for the plugins design",
     "license":"MIT",
     "authors":{
-        "name":"Andrew V. Galagan",
-        "email":"andrew.galagan@gmail.com"
+        "name":["Andrew V. Galagan"],
+        "email":["andrew.galagan@gmail.com"]
     },
     "repositories": [
         {
