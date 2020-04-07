@@ -6,7 +6,12 @@
         "name":"Andrew V. Galagan",
         "email":"andrew.galagan@gmail.com"
     },
-
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://github.com/litterec/wp_plugin_workshop"
+        }
+    ],
     "require":{
         "php":">=5.5.0"
     },
